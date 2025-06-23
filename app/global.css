@@ -1,0 +1,225 @@
+/* === Reset & Global === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #fff8fb;
+  color: #cc2e5d;
+  line-height: 1.6;
+}
+
+/* === Navbar === */
+.navbar {
+  background-color: #ffffff;
+  padding: 16px 24px;
+  border-bottom: 2px solid #ffdbe6;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 4px 12px rgba(255, 192, 203, 0.1);
+}
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+  color: #d6336c;
+  cursor: pointer;
+}
+.nav-links {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+.nav-link {
+  text-decoration: none;
+  color: #d6336c;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+.nav-link:hover {
+  color: #ff5c8d;
+}
+.btn-logout {
+  background: #ff5c8d;
+  color: white;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.btn-logout:hover {
+  background: #e93e6f;
+}
+
+/* === Hamburger Menu === */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+.bar {
+  width: 24px;
+  height: 3px;
+  background: #ff5c8d;
+  border-radius: 3px;
+}
+
+/* === Responsive Nav === */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    background: #ffffff;
+    padding: 16px;
+    border-radius: 12px;
+    border: 1px solid #ffcbd0;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
+
+/* === Form Container === */
+.container {
+  max-width: 440px;
+  margin: 80px auto;
+  padding: 32px;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(255, 92, 141, 0.15);
+  text-align: center;
+}
+
+/* === Input Fields === */
+input {
+  width: 100%;
+  padding: 14px 16px;
+  margin: 12px 0;
+  border: 2px solid #ffcbd0;
+  border-radius: 14px;
+  font-size: 16px;
+  color: #cc2e5d;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+input:focus {
+  border-color: #ff5c8d;
+}
+
+/* === Buttons === */
+button {
+  width: 100%;
+  padding: 14px;
+  background-color: #ff5c8d;
+  border: none;
+  color: white;
+  font-weight: 700;
+  font-size: 17px;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 16px;
+}
+button:hover {
+  background-color: #e93e6f;
+}
+
+/* === Error Text === */
+.error {
+  color: #d93025;
+  margin-top: 12px;
+  font-weight: 600;
+}
+
+/* === Links === */
+a {
+  color: #ff5c8d;
+  text-decoration: none;
+  font-weight: 600;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* === Products Grid === */
+.products-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 28px;
+  margin-top: 20px;
+}
+
+/* === Product Card === */
+.product-card {
+  background-color: #fff0f6;
+  border-radius: 18px;
+  padding: 24px;
+  width: 240px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(255, 92, 141, 0.15);
+  position: relative;
+  transition: transform 0.3s ease;
+}
+.product-card:hover {
+  transform: scale(1.05);
+}
+.product-image {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 16px;
+}
+
+/* Optional Overlay (jika dipakai tombol lain, bisa hapus) */
+.product-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 18px;
+  background-color: rgba(255, 255, 255, 0.85);
+  color: #cc2e5d;
+  font-weight: bold;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 2;
+}
+.product-card:hover .product-overlay {
+  opacity: 1;
+}
+
+.product-name {
+  font-weight: 700;
+  font-size: 18px;
+  margin-bottom: 8px;
+  color: #cc2e5d;
+}
+.product-price {
+  font-weight: 600;
+  font-size: 16px;
+  color: #f783ac;
+}
